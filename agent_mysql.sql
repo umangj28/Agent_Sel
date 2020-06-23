@@ -1,0 +1,23 @@
+show databases;
+use mysql;
+drop table agent_status;
+create table agent_status(agent_name varchar(20) primary key, available_since date, roles varchar(30));
+insert into agent_status values('agent1','17-03-17','sales');
+insert into agent_status values('agent2','19-01-19','sales,support'),('agent3','16-06-16','spanish-speaker'),('agent4','18-09-18','support'),('agent5','16-10-16','spanish-speaker,sales'),('agent6','20-01-20','support,sales,spanish-speaker'),('agent7','17-07-18','sales');
+select * from agent_status;
+alter table agent_status add availability varchar(5) default 'Yes';
+select * from agent_status;
+insert into agent_status values('agent8',null,'sales','No'),('agent9',null,'support','No');
+select * from agent_status;
+alter table agent_status add days int default '515';
+select * from agent_status;
+update agent_status set days=50 where agent_name="agent6";
+select * from agent_status;
+update agent_status set days=1155 where agent_name="agent1";
+update agent_status set days=48 where agent_name="agent3";
+update agent_status set days=670 where agent_name="agent4";
+update agent_status set days=1095 where agent_name="agent7";
+update agent_status set days=null where agent_name="agent8";
+update agent_status set days=null where agent_name="agent9";
+update agent_status set days=830 where agent_name="agent5";
+select * from agent_status
