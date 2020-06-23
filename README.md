@@ -10,7 +10,7 @@ When an issue comes in we need to present the issue to 1 or many agents based on
 
 The function takes an input the list of agents with their data, agent selection mode and returns a list of agents the issue should be presented to.
 
-The function is implemented using Python and MySQL here. The database contains the dats of all agents, their roles, availability, and the number of days since they are available.
+The function is implemented using Python and MySQL here. The database contains the data of all agents, their roles, availability, and the number of days since they are available.
 The python code consists of all the functions and using the data from the database the agents which have the user input roles are filtered, and as per the given agent selection mode, the list of agents are returned to the user.
 
 This project is useful to provide various services to the customers where users can provide their issues and the appropriate agent is allotted to them.
